@@ -70,8 +70,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+TARGET_USES_CUSTOM_GAPPS = true
+
 # Inherit from the common OEM chipset makefile.
 $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/lemonadep/lemonadep-vendor.mk)
+
+# Add Oneplus camera
+$(call inherit-product, vendor/oplus/camera/opluscamera.mk)
